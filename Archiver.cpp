@@ -48,7 +48,7 @@ void BuildTable(Node *root)
 
 int main (int argc, char *argv[])
 {
-////// считаем частоты символов
+////// СЃС‡РёС‚Р°РµРј С‡Р°СЃС‚РѕС‚С‹ СЃРёРјРІРѕР»РѕРІ
 	ifstream f("1.txt", ios::out | ios::binary);
 
 	map<char,int> m;
@@ -58,7 +58,7 @@ int main (int argc, char *argv[])
 	   m[c]++;}
 
 
-////// записываем начальные узлы в список list
+////// Р·Р°РїРёСЃС‹РІР°РµРј РЅР°С‡Р°Р»СЊРЅС‹Рµ СѓР·Р»С‹ РІ СЃРїРёСЃРѕРє list
 
    list<Node*> t;
    for( map<char,int>::iterator itr=m.begin(); itr!=m.end(); ++itr)
@@ -69,7 +69,7 @@ int main (int argc, char *argv[])
       t.push_back(p);      }
 
 
-//////  создаем дерево
+//////  СЃРѕР·РґР°РµРј РґРµСЂРµРІРѕ
 
   while (t.size()!=1)
   {
@@ -85,15 +85,15 @@ int main (int argc, char *argv[])
 
   }
 
-	Node *root = t.front();   //root - указатель на вершину дерева
+	Node *root = t.front();   //root - СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РІРµСЂС€РёРЅСѓ РґРµСЂРµРІР°
 
-////// создаем пары 'символ-код':
+////// СЃРѕР·РґР°РµРј РїР°СЂС‹ 'СЃРёРјРІРѕР»-РєРѕРґ':
 
    	BuildTable(root);
 
-////// Выводим коды в файл output.txt
+////// Р’С‹РІРѕРґРёРј РєРѕРґС‹ РІ С„Р°Р№Р» output.txt
 
-    f.clear(); f.seekg(0); // перемещаем указатель снова в начало файла
+    f.clear(); f.seekg(0); // РїРµСЂРµРјРµС‰Р°РµРј СѓРєР°Р·Р°С‚РµР»СЊ СЃРЅРѕРІР° РІ РЅР°С‡Р°Р»Рѕ С„Р°Р№Р»Р°
 
 	ofstream g("output.txt", ios::out | ios::binary);
 
@@ -111,11 +111,11 @@ int main (int argc, char *argv[])
     f.close();
 	g.close();
 
-///// считывание из файла output.txt и преобразование обратно
+///// СЃС‡РёС‚С‹РІР°РЅРёРµ РёР· С„Р°Р№Р»Р° output.txt Рё РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РѕР±СЂР°С‚РЅРѕ
 
 	ifstream F("output.txt", ios::in | ios::binary);
 
-	setlocale(LC_ALL,"Russian"); // чтоб русские символы отображались в командной строке
+	setlocale(LC_ALL,"Russian"); // С‡С‚РѕР± СЂСѓСЃСЃРєРёРµ СЃРёРјРІРѕР»С‹ РѕС‚РѕР±СЂР°Р¶Р°Р»РёСЃСЊ РІ РєРѕРјР°РЅРґРЅРѕР№ СЃС‚СЂРѕРєРµ
 
 	Node *p = root;
 	count=0; char byte;
