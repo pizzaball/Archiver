@@ -49,7 +49,7 @@ void BuildTable(Node *root)
 int main (int argc, char *argv[])
 {
 ////// считаем частоты символов
-	ifstream f("1.txt", ios::out | ios::binary);
+	ifstream f("1.txt");
 
 	map<char,int> m;
 
